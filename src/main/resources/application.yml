@@ -1,0 +1,31 @@
+log:
+    level:
+        root: DEBUG
+server:
+    port: 9090
+    servlet:
+        context-path: /fabrick
+    datasource:
+        driverClassName: org.h2.Driver
+        url: jdbc:h2:file:./src/test/h2/db;DB_CLOSE_ON_EXIT=FALSE;AUTO_RECONNECT=TRUE
+        username: sa
+    h2:
+        console:
+        enabled: true
+    jpa:
+        database-platform: org.hibernate.dialect.H2Dialect
+        h2:
+            console:
+              enable: false
+        hibernate:
+            ddl-auto: update
+        show-sql: false
+connect:
+  baseUrl: https://sandbox.platfr.io
+  authSchema: S2S
+  apiKey: FXOVVXXHVCPVPBZXIJOBGUGSKHDNFRRQJP
+  accountId: 14537780
+  balancePath: /api/gbs/banking/v4.0/accounts/{accountId}/balance
+  transactionsPath: /api/gbs/banking/v4.0/accounts/{accountId}/transactions
+  transferPath: /api/gbs/banking/v4.0/accounts/{accountId}/payments/money-transfers
+date-pattern: yyyy-MM-dd
